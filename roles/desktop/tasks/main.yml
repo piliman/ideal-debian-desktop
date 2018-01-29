@@ -7,3 +7,7 @@
 - include: gnome-desktop.yml
 
 - include: web-browsers/main.yml
+
+- include: mailclient/main.yml
+
+- include: multimedia/main.yml

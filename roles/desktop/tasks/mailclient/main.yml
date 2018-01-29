@@ -12,7 +12,7 @@
 
 - name: Install aspell
   become: True
-  apt: name={{ item =} state=latest
+  apt: name={{ item }} state=latest
   with_items:
     - aspell
     - aspell-en

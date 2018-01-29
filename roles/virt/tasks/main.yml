@@ -1,4 +1,0 @@
-- include: docker.yml
-
-- name: Install VirtualBox
-  dnf: name=VirtualBox state=present
