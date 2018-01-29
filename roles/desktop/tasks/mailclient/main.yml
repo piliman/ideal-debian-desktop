@@ -9,6 +9,12 @@
      - calendar-exchange-provider
      - calendar-google-provider
      - enigmail
+     - xul-ext-adblock-plus
+     - xul-ext-adblock-plus-element-hiding-helper
+     - xul-ext-https-everywhere
+     - xul-ext-timeline
+     - lightning
+     - lightning-l10n-fr
 
 - name: Install aspell
   become: True
