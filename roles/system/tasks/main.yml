@@ -29,7 +29,7 @@
     - command-not-found
     - sudo
 - include: debian-multimedia-repo.yml
-- include: docker-ce-repo.yml
+#- include: docker-ce-repo.yml
 #- include: dropbox-repo.yml
 - include: google-repo.yml
 - include: opera-repo.yml
