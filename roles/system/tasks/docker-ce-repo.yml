@@ -1,0 +1,21 @@
+## Docker-CE Repo
+
+#- name: Install Docker-CE Public Key
+#  apt_key:
+#    url: https://apt.dockerproject.org/gpg
+#    state: present
+#  register: add_repository_key
+#  ignore_errors: true
+# the above can fail..?? So, took this from:
+# https://github.com/angstwad/docker.ubuntu/blob/master/tasks/main.yml#L20
+
+- name: Alternative | Add Docker-CE Public key
+  shell: curl -sSL https://apt.dockerproject.org/gpg | sudo apt-key add -
+#  when: add_repository_key|failed
+
+- name: Add Docker-CE Repo
+  become: True
+  apt_repository:
+   repo: deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_lsb['codename'] }} stable
+   state: present
+   filename: 'docker-ce'

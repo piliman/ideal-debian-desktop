@@ -1,0 +1,14 @@
+- name: Install Network software
+  package: name={{ item }} state=present
+  with_items:
+    - nmap
+    - zenmap
+    - nmapsi4
+    - youtube-dl
+    - wget
+    - aria2
+    - mosh
+    - tcpdump
+    - wireshark
+    - wireshark-gtk
+    - wireshark-qt

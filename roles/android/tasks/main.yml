@@ -1,0 +1,11 @@
+## Android packages
+
+
+- name: Install Android Tools
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - adb
+    - android-sdk-platform-tools-common
+    - androidsdk-ddms
+    - android-tools-adb

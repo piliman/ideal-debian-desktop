@@ -1,0 +1,13 @@
+## Vivaldi browsers Repo
+
+- name: Install Vivaldi Public Key
+  apt_key:
+    url: http://repo.vivaldi.com/stable/linux_signing_key.pub
+    state: present
+
+- name: Add Vivaldi Repo
+  become: True
+  apt_repository:
+   repo: deb http://repo.vivaldi.com/stable/deb/ stable main
+   state: present
+   filename: 'vivaldi-stable'

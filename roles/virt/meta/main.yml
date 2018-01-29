@@ -1,0 +1,4 @@
+# non-free codecs :(
+dependencies:
+  - rpmfusion
+

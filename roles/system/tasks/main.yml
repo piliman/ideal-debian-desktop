@@ -1,0 +1,35 @@
+## Apt packages
+
+- name: Configure APT sources.list
+  template: src=sources.list.j2 dest=/etc/apt/sources.list
+  notify: apt update
+
+- name: Install APT Tools
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - apt-clone
+    - apt-file
+    - aptitude
+    - synaptic
+    - aptitude-robot
+    - apt-utils
+    - netselect-apt
+    - apt-transport-https
+    - debian-archive-keyring
+
+- name: Install Shell and System Tools
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - htop
+    - mssh
+    - bash-completion
+    - clusterssh
+    - command-not-found
+- include: debian-multimedia-repo.yml
+- include: docker-ce-repo.yml
+#- include: dropbox-repo.yml
+- include: google-repo.yml
+- include: opera-repo.yml
+- include: vivaldi-repo.yml

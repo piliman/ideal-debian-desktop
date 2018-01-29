@@ -1,0 +1,18 @@
+[alias]
+  co = checkout
+  ci = commit
+  rb = rebase
+  st = status
+  cl = clone
+
+[color]
+  status = auto
+  branch = auto
+  ui = auto
+
+[user]
+  name = Vincent Aaron
+  email = piliman974@gmail.com
+
+[mergetool "vimdiff3"]
+   cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"

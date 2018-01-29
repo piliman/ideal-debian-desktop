@@ -1,0 +1,13 @@
+## Microsoft VSCode Repo
+
+- name: Install Microsoft VSCode Public Key
+  apt_key:
+    url: 
+    state: present
+
+- name: Add Microsoft VSCode Repo
+  become: True
+  apt_repository:
+   repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+   state: present
+   filename: 'microsoft-vscode'

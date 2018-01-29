@@ -1,0 +1,13 @@
+## Skype Repo
+
+- name: Install Skype Public Key
+  apt_key:
+    url: 
+    state: present
+
+- name: Add Skype Repo
+  become: True
+  apt_repository:
+   repo: deb [arch=amd64] https://repo.skype.com/deb stable main
+   state: present
+   filename: 'skype'

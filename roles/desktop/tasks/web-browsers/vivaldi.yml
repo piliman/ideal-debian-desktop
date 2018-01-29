@@ -1,0 +1,7 @@
+## Vivaldi browsers packages
+
+- name: Install Vivaldi Web Browser
+  become: True
+  apt: name=vivaldi-stable state=latest
+
+

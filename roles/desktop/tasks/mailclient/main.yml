@@ -1,0 +1,19 @@
+##  packages
+
+- name: Install Thunderbird
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+     - thunderbird
+     - thunderbird-l10n-fr
+     - calendar-exchange-provider
+     - calendar-google-provider
+     - enigmail
+
+- name: Install aspell
+  become: True
+  apt: name={{ item =} state=latest
+  with_items:
+    - aspell
+    - aspell-en
+    - aspell-fr

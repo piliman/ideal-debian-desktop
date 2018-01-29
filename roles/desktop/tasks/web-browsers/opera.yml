@@ -1,0 +1,5 @@
+## Opera browsers packages
+
+- name: Install Opera Web Browser
+  become: True
+  apt: name=opera-stable update_cache=yes state=latest

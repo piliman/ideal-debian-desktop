@@ -1,0 +1,8 @@
+## Chromium browsers packages
+
+- name: Install chromium
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - chromium
+    - chromium-shell

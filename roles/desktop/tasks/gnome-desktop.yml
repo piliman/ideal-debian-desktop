@@ -1,0 +1,49 @@
+## GDM3 packages
+
+- name: Install gnome via tasksel
+  become: True
+  shell: tasksel install gnome-desktop
+
+- name: Install Gnome Shell and Gnome Shell Extensions
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+   - gnome-software-common
+   - gnome-shell-common
+   - gnome-shell
+   - gnome-shell-common
+   - gnome-shell-extension-autohidetopbar
+   - gnome-shell-extension-better-volume
+   - gnome-shell-extension-caffeine
+   - gnome-shell-extension-dashtodock
+   - gnome-shell-extension-disconnect-wifi
+   - gnome-shell-extension-hard-disk-led
+   - gnome-shell-extension-hide-activities
+   - gnome-shell-extension-impatience
+   - gnome-shell-extension-log-out-button
+   - gnome-shell-extension-mediaplayer
+   - gnome-shell-extension-move-clock
+   - gnome-shell-extension-multi-monitors
+   - gnome-shell-extension-onboard
+   - gnome-shell-extension-pixelsaver
+   - gnome-shell-extension-redshift
+   - gnome-shell-extension-remove-dropdown-arrows
+   - gnome-shell-extensions
+   - gnome-shell-extensions-gpaste
+   - gnome-shell-extension-shortcuts
+   - gnome-shell-extension-suspend-button
+   - gnome-shell-extension-system-monitor
+   - gnome-shell-extension-taskbar
+   - gnome-shell-extension-top-icons-plus
+   - gnome-shell-extension-trash
+   - gnome-shell-extension-weather
+
+- name: Install Nautilus Extensions
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - nautilus-admin
+    - nautilus-data
+    - nautilus-scripts-manager
+    - nautilus-sendto
+    - nautilus-share

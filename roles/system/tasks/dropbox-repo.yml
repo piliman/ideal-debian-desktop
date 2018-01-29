@@ -1,0 +1,14 @@
+## DropBox Repo
+
+- name: Install DropBox Public Key
+  apt_key:
+    keyserver: pgp.mit.edu
+    id: 7EA0A9C3F273FCD8
+    state: present
+
+- name: Add DropBox Repo
+  become: True
+  apt_repository:
+   repo: deb http://linux.dropbox.com/debian {{ ansible_lsb['codename'] }} main
+   state: present
+   filename: 'dropbox'

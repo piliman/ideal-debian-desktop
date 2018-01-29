@@ -1,0 +1,12 @@
+## Debian Multimedia Repo
+
+- name: Install Debian multimedia Public Key
+  apt:
+    deb: http://www.deb-multimedia.org/pool/main/d/deb-multimedia-keyring/deb-multimedia-keyring_2016.8.1_all.deb
+
+- name: Add Debian Multimedia Repo
+  become: True
+  apt_repository:
+   repo: deb https://www.deb-multimedia.org stable main non-free
+   state: present
+   filename: 'debian-multimedia'

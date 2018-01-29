@@ -1,0 +1,9 @@
+## Tor browsers packages
+
+- name: Install Tor
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - tor
+    - tor-geoipdb
+    - torsocks

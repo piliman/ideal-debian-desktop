@@ -1,0 +1,20 @@
+## Google Chrome Repo
+
+- name: Install Google Public Key
+  apt_key:
+    url: https://dl.google.com/linux/linux_signing_key.pub
+    state: present
+
+- name: Add Google Chrome Repo
+  become: True
+  apt_repository:
+   repo: deb http://dl.google.com/linux/chrome/deb/ stable main
+   state: present
+   filename: 'google-chrome-stable'
+
+- name: Add Google Earth Repo
+  become: True
+  apt_repository:
+   repo: deb [arch=amd64] http://dl.google.com/linux/earth/deb/ stable main
+   state: present
+   filename: 'google-earth-stable'

@@ -1,0 +1,5 @@
+- include: chromium.yml
+- include: google.yml
+- include: opera.yml
+- include: torbrowser.yml
+- include: vivaldi.yml
