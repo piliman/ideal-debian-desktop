@@ -27,6 +27,7 @@
     - bash-completion
     - clusterssh
     - command-not-found
+    - sudo
 - include: debian-multimedia-repo.yml
 - include: docker-ce-repo.yml
 #- include: dropbox-repo.yml
