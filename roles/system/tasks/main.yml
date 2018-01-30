@@ -23,6 +23,21 @@
   become: True
   apt: name={{ item }} state=latest
   with_items:
+    - clamav
+    - clamav-base
+    - clamav-daemon
+    - clamav-freshclam
+    - clamav-testfiles
+    - clamdscan
+    - clamtk
+    - clamtk-gnome
+    - clamtk-nautilus
+
+
+- name: Install Ansible Tools
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
     - ansible-tower-cli
 
 - name: Install Shell and System Tools
