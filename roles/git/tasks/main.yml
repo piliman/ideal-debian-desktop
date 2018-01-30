@@ -1,4 +1,4 @@
-- package: name={{ item }} state=present
+- package: name={{ item }} state=latest
   with_items:
     - git
     - tig

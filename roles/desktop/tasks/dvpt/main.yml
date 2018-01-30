@@ -1,0 +1,7 @@
+
+
+- name: Install APT Tools
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - jq

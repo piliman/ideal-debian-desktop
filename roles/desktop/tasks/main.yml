@@ -1,9 +1,5 @@
 ## GDM3 packages
 
-- name: Install tasksel
-  become: True
-  apt: name=tasksel state=latest
-
 - include: gnome-desktop.yml
 
 - include: web-browsers/main.yml
@@ -11,3 +7,5 @@
 - include: mailclient/main.yml
 
 - include: multimedia/main.yml
+
+- include: dvpt/main.yml

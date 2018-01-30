@@ -1,5 +1,5 @@
 - name: Install Network software
-  package: name={{ item }} state=present
+  package: name={{ item }} state=latest
   with_items:
     - nmap
     - zenmap
@@ -12,3 +12,13 @@
     - wireshark
     - wireshark-gtk
     - wireshark-qt
+#    - snort
+#    - snort-doc
+#    - snort-rules-default
+
+- name: Install Dnsmasq
+  package: name={{ item }} state=latest
+  with_items:
+    - dnsmasq
+    - dnsmasq-utils
+ 

@@ -8,6 +8,7 @@
   become: True
   apt: name={{ item }} state=latest
   with_items:
+    - tasksel
     - apt-clone
     - apt-file
     - aptitude
@@ -17,6 +18,12 @@
     - netselect-apt
     - apt-transport-https
     - debian-archive-keyring
+
+- name: Install Ansible Tools
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - ansible-tower-cli
 
 - name: Install Shell and System Tools
   become: True
@@ -28,6 +35,33 @@
     - clusterssh
     - command-not-found
     - sudo
+    - rsync
+
+- name: Install Crypt Tools
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - cryptmount
+    - cryptsetup
+
+- name: Install Irssi Tools
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - irssi
+    - irssi-plugin-otr
+    - irssi-plugin-robustirc
+    - irssi-plugin-xmpp
+    - irssi-scripts
+
+- name: Install plymouth
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - plymouth
+    - plymouth-theme-hamara
+    - plymouth-themes
+
 - include: debian-multimedia-repo.yml
 #- include: docker-ce-repo.yml
 #- include: dropbox-repo.yml
