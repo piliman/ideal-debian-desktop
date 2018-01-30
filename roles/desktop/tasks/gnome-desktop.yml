@@ -48,3 +48,11 @@
     - nautilus-scripts-manager
     - nautilus-sendto
     - nautilus-share
+
+- name: Install Gnome Tweak tools
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - gnome-tweak-tool 
+    - dconf-editor
+    - dconf-cli
