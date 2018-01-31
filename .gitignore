@@ -1,1 +1,12 @@
 *.retry
+roles/android/tasks/.*.swp
+roles/desktop/tasks/.*.swp
+roles/desktop/tasks/dvpt/.*.swp
+roles/desktop/tasks/libreoffice/.*.swp
+roles/desktop/tasks/mailclient/.*.swp
+roles/desktop/tasks/multimedia/.*.swp
+roles/desktop/tasks/web-browsers/.*.swp
+roles/git/tasks/.*.swp
+roles/net/tasks/.*.swp
+roles/system/tasks/.*.swp
+roles/virt/tasks/.*.swp
