@@ -1,7 +1,9 @@
 
 
-- name: Install APT Tools
+- name: Install Developpment Tools
   become: True
   apt: name={{ item }} state=latest
   with_items:
     - jq
+    - eclipse-pde
+    - eclipse-rcp
