@@ -1,0 +1,12 @@
+
+org.gnome.shell enabled-extensions -> ['windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'openweather-extension@jenslody.de', 'system-monitor@paradoxxx.zero.gmail.com', 'multi-monitors-add-on@spin83', 'harddiskled@bijidroid.gmail.com', 'LogOutButton@kyle.aims.ac.za', 'alternate-tab@gnome-shell-extensions.gcampax.github.com'
+
+
+org.gnome.desktop.interface enable-animations -> True
+
+
+org.gnome.desktop.interface clock-show-date -> True
+
+
+org.gnome.desktop.calendar show-weekdate -> True
+
