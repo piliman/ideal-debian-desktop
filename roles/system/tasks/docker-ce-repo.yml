@@ -10,7 +10,7 @@
 # https://github.com/angstwad/docker.ubuntu/blob/master/tasks/main.yml#L20
 
 - name: Alternative | Add Docker-CE Public key
-  shell: curl -sSL https://apt.dockerproject.org/gpg | sudo apt-key add -
+  shell: curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
 #  when: add_repository_key|failed
 
 - name: Add Docker-CE Repo
