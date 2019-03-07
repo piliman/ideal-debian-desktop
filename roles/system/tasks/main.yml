@@ -22,7 +22,7 @@
     - gnupg2
     - software-properties-common
 
-- name: Install Ansible Tools
+- name: Install Antivirus Tools
   become: True
   apt: name={{ item }} state=latest
   with_items:
@@ -81,7 +81,7 @@
     - plymouth-themes
 
 - include: debian-multimedia-repo.yml
-- include: docker-ce-repo.yml
+#- include: docker-ce-repo.yml
 #- include: dropbox-repo.yml
 - include: google-repo.yml
 - include: opera-repo.yml

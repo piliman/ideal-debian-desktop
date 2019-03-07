@@ -9,6 +9,6 @@
 - name: Add DropBox Repo
   become: True
   apt_repository:
-   repo: deb http://linux.dropbox.com/debian {{ ansible_lsb['codename'] }} main
+   repo: deb http://linux.dropbox.com/debian {{ ansible_distribution_release }} main
    state: present
    filename: 'dropbox'
