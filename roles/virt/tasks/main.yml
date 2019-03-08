@@ -4,4 +4,4 @@
   apt: name={{ item }} state=latest
   with_items:
     - virt-manager
-    - docker-ce
+    #- docker-ce

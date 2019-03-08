@@ -6,16 +6,15 @@
   with_items:
      - thunderbird
      - thunderbird-l10n-fr
-     - calendar-exchange-provider
      - calendar-google-provider
      - enigmail
-     - xul-ext-adblock-plus
-     - xul-ext-adblock-plus-element-hiding-helper
-     - xul-ext-https-everywhere
+     - webext-ublock-origin
+     - webext-https-everywhere
      - xul-ext-timeline
      - xul-ext-gcontactsync
      - lightning
      - lightning-l10n-fr
+# - calendar-exchange-provider xul-ext-adblock-plus xul-ext-adblock-plus-element-hiding-helper
 
 - name: Install aspell
   become: True

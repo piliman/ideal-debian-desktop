@@ -7,3 +7,5 @@
     - jq
     - eclipse-pde
     - eclipse-rcp
+    - code
+    - gvfs-bin # To enable trash implementation on vscode

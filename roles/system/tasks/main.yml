@@ -86,3 +86,4 @@
 - include: google-repo.yml
 - include: opera-repo.yml
 - include: vivaldi-repo.yml
+- include: microsoft-vscode-repo.yml
