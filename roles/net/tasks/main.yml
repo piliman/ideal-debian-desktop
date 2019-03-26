@@ -12,6 +12,10 @@
     - wireshark
     - wireshark-gtk
     - wireshark-qt
+    - network-manager-openvpn
+    - network-manager-openvpn-gnome
+    - openvpn
+    - openvpn-systemd-resolved
 #    - snort
 #    - snort-doc
 #    - snort-rules-default
