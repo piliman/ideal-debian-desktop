@@ -1,0 +1,8 @@
+## Debian Multimedia Repo
+
+- name: Add Debian Backports Repo
+  become: True
+  apt_repository:
+   repo: deb http://ftp.debian.org/debian {{ ansible_distribution_release }}-backports main contrib non-free
+   state: present
+   filename: 'debian-backports'

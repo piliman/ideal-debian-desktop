@@ -87,3 +87,4 @@
 - include: opera-repo.yml
 - include: vivaldi-repo.yml
 - include: microsoft-vscode-repo.yml
+- include: debian-backports-repo.yml

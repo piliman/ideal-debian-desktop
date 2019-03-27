@@ -56,3 +56,19 @@
     - gnome-tweak-tool 
     - dconf-editor
     - dconf-cli
+
+- name: Install Remmina
+  become: True
+  apt: name={{ item }} state=latest default_release={{ ansible_distribution_release }}-backports
+  with_items:
+    - remmina
+    - remmina-plugin-rdp
+    - remmina-plugin-secret
+    - remmina-plugin-spice
+
+- name: Install Keepass
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - keepass2
+    - keepassx

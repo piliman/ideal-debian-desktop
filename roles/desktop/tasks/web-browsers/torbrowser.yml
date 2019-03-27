@@ -7,3 +7,10 @@
     - tor
     - tor-geoipdb
     - torsocks
+
+- name: Install Torbrowser Launcher
+  become: True
+  apt: name={{ item }} state=latest default_release={{ ansible_distribution_release }}-backports
+  with_items:
+    - torbrowser-launcher
+

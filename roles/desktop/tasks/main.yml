@@ -9,3 +9,5 @@
 - include: multimedia/main.yml
 
 - include: dvpt/main.yml
+
+- include: ftpclient/main.yml
