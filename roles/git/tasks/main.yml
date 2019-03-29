@@ -4,4 +4,6 @@
     - tig
 
 - name: Link .gitconfig
-  file: src={{ role_path }}/files/gitconfig dest=/home/{{ user }}/.gitconfig state=link
+  file: src={{ role_path }}/files/gitconfig dest=/home/vaaron/.gitconfig state=link
+
+#  file: src={{ role_path }}/files/gitconfig dest=/home/{{ user }}/.gitconfig state=link

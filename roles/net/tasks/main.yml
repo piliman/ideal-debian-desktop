@@ -16,6 +16,8 @@
     - network-manager-openvpn-gnome
     - openvpn
     - openvpn-systemd-resolved
+    - whois
+    - dnsutils
 #    - snort
 #    - snort-doc
 #    - snort-rules-default
