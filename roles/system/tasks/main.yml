@@ -80,11 +80,35 @@
     - plymouth-theme-hamara
     - plymouth-themes
 
+- name: Install Compression Tools
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - unace
+    - unace-nonfree
+    - unrar-free
+    - unrar
+
+- name: Install Xmllint
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - libxml2-utils
+
+
 - include: debian-multimedia-repo.yml
-#- include: docker-ce-repo.yml
+- include: docker-ce-repo.yml
 #- include: dropbox-repo.yml
 - include: google-repo.yml
 - include: opera-repo.yml
 - include: vivaldi-repo.yml
 - include: microsoft-vscode-repo.yml
 - include: debian-backports-repo.yml
+
+- name: Install Docker-CE
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
