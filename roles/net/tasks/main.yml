@@ -21,6 +21,7 @@
     - fwbuilder
     - ipcalc
     - sipcalc
+    - mtr
 #    - snort
 #    - snort-doc
 #    - snort-rules-default
