@@ -36,7 +36,16 @@
     - clamtk-gnome
     - clamtk-nautilus
 
-
+- name: Install Diags Tools
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - lshw
+    - sysstat
+    - ifstat
+    - iotop
+    - mtr
+ 
 - name: Install Ansible Tools
   become: True
   apt: name={{ item }} state=latest
@@ -95,6 +104,18 @@
   with_items:
     - libxml2-utils
 
+- name: Install Lynx
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - lynx
+
+- name: Install Mount Tools
+  become: True
+  apt: name={{ item }} state=latest
+  with_items:
+    - smbclient
+    - smbnetfs
 
 - include: debian-multimedia-repo.yml
 - include: docker-ce-repo.yml

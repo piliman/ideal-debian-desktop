@@ -18,6 +18,9 @@
     - openvpn-systemd-resolved
     - whois
     - dnsutils
+    - fwbuilder
+    - ipcalc
+    - sipcalc
 #    - snort
 #    - snort-doc
 #    - snort-rules-default
@@ -28,3 +31,7 @@
     - dnsmasq
     - dnsmasq-utils
  
+- name: Install Nagstamon
+  package: name={{ item }} state=latest
+  with_items:
+    - nagstamon

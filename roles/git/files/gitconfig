@@ -26,3 +26,5 @@
 [github]
 	user = piliman
 
+[http]
+	postBuffer = 157286400
