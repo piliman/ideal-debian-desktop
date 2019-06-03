@@ -21,6 +21,8 @@
     - ca-certificates
     - gnupg2
     - software-properties-common
+    - pigz
+    - screen
 
 - name: Install Antivirus Tools
   become: True
