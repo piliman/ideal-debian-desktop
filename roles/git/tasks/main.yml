@@ -1,7 +1,11 @@
-- package: name={{ item }} state=latest
-  with_items:
-    - git
-    - tig
+---
+# tasks file for git
+
+- package:
+    name:
+        - git
+        - tig
+    state: latest
 
 - name: Link .gitconfig
   file: src={{ role_path }}/files/gitconfig dest=/home/vaaron/.gitconfig state=link

@@ -2,32 +2,36 @@
 
 - name: Install Firefox
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - firefox-esr
-    - firefox-esr-l10n-fr
+  package:
+    name: 
+      - firefox-esr
+      - firefox-esr-l10n-fr
+    state: latest
 
-- name: Install Ublock Origin addon
-      firefox-addon:
-        url: https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
-        state: present
+
+
 
 - name: Install Ghostery
-      firefox_addon:
-        url: https://addons.mozilla.org/en-US/firefox/addon/ghostery/
-        state: present
+  firefox_addon:
+    url: https://addons.mozilla.org/en-US/firefox/addon/ghostery/
+    state: present
+
+- name: Install Ublock Origin Addon
+  firefox_addon:
+    url: https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
+    state: present
 
 - name: Install LastPass Manager
-      firefox_addon:
-        url: https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/
-        state: present
+  firefox_addon:
+    url: https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/
+    state: present
 
 - name: Install LastPass Manager
-      firefox_addon:
-        url: https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/
-        state: present
+  firefox_addon:
+    url: https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/
+    state: present
 
 - name: Install LastPass Manager
-      firefox_addon:
-        url: https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/
-        state: present
+  firefox_addon:
+    url: https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/
+    state: present

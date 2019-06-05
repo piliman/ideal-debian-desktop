@@ -2,6 +2,7 @@
 
 - name: Install Filezilla
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - filezilla
+  package:
+    name:
+        - filezilla
+    state: latest

@@ -1,4 +1,5 @@
-## Apt packages
+---
+# tasks file for system
 
 - name: Configure APT sources.list
   template: src=sources.list.j2 dest=/etc/apt/sources.list
@@ -6,118 +7,124 @@
 
 - name: Install APT Tools
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - tasksel
-    - apt-clone
-    - apt-file
-    - aptitude
-    - synaptic
-    - aptitude-robot
-    - apt-utils
-    - netselect-apt
-    - apt-transport-https
-    - debian-archive-keyring
-    - ca-certificates
-    - gnupg2
-    - software-properties-common
-    - pigz
-    - screen
+  package:
+    name:
+        - tasksel
+        - apt-clone
+        - apt-file
+        - aptitude
+        - synaptic
+        - aptitude-robot
+        - apt-utils
+        - netselect-apt
+        - apt-transport-https
+        - debian-archive-keyring
+        - ca-certificates
+        - gnupg2
+        - software-properties-common
+        - screen
+    state: latest
 
 - name: Install Antivirus Tools
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - clamav
-    - clamav-base
-    - clamav-daemon
-    - clamav-freshclam
-    - clamav-testfiles
-    - clamdscan
-    - clamtk
-    - clamtk-gnome
-    - clamtk-nautilus
+  package:
+    name:
+        - clamav
+        - clamav-base
+        - clamav-daemon
+        - clamav-freshclam
+        - clamav-testfiles
+        - clamdscan
+        - clamtk
+        - clamtk-gnome
+        - clamtk-nautilus
+    state: latest
 
-- name: Install Diags Tools
+- name: Install Shell, System Tools and Diags Tools
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - lshw
-    - sysstat
-    - ifstat
-    - iotop
-    - mtr
+  package:
+    name:
+        - htop
+        - mssh
+        - bash-completion
+        - clusterssh
+        - command-not-found
+        - sudo
+        - rsync
+        - lshw
+        - sysstat
+        - ifstat
+        - iotop
+        - mtr
+    state: latest
  
 - name: Install Ansible Tools
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - ansible-tower-cli
-
-- name: Install Shell and System Tools
-  become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - htop
-    - mssh
-    - bash-completion
-    - clusterssh
-    - command-not-found
-    - sudo
-    - rsync
+  package:
+    name:
+        - ansible-tower-cli
+    state: latest
 
 - name: Install Crypt Tools
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - cryptmount
-    - cryptsetup
+  package:
+    name:
+        - cryptmount
+        - cryptsetup
+    state: latest
 
 - name: Install Irssi Tools
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - irssi
-    - irssi-plugin-otr
-    - irssi-plugin-robustirc
-    - irssi-plugin-xmpp
-    - irssi-scripts
+  package:
+    name:
+        - irssi
+        - irssi-plugin-otr
+        - irssi-plugin-robustirc
+        - irssi-plugin-xmpp
+        - irssi-scripts
+    state: latest
 
 - name: Install plymouth
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - plymouth
-    - plymouth-theme-hamara
-    - plymouth-themes
+  package:
+    name:
+        - plymouth
+        - plymouth-theme-hamara
+        - plymouth-themes
+    state: latest
 
 - name: Install Compression Tools
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - unace
-    - unace-nonfree
-    - unrar-free
-    - unrar
+  package:
+    name:
+        - unace
+        - unace-nonfree
+        - unrar-free
+        - unrar
+        - pigz
+    state: latest
 
 - name: Install Xmllint
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - libxml2-utils
+  package:
+    name:
+        - libxml2-utils
+    state: latest
 
 - name: Install Lynx
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - lynx
+  package:
+    name:
+        - lynx
+    state: latest
 
 - name: Install Mount Tools
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - smbclient
-    - smbnetfs
+  package:
+    name:
+        - smbclient
+        - smbnetfs
+    state: latest
 
 - include: debian-multimedia-repo.yml
 - include: docker-ce-repo.yml
@@ -130,8 +137,9 @@
 
 - name: Install Docker-CE
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - docker-ce
-    - docker-ce-cli
-    - containerd.io
+  package:
+    name:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+    state: latest

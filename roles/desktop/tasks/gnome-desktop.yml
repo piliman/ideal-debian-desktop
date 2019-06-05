@@ -6,69 +6,75 @@
 
 - name: Install Gnome Shell and Gnome Shell Extensions
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-   - gnome-software-common
-   - gnome-shell-common
-   - gnome-shell
-   - gnome-shell-common
-   - gnome-shell-extension-autohidetopbar
-   - gnome-shell-extension-better-volume
-   - gnome-shell-extension-caffeine
-   - gnome-shell-extension-dashtodock
-   - gnome-shell-extension-disconnect-wifi
-   - gnome-shell-extension-hard-disk-led
-   - gnome-shell-extension-hide-activities
-   - gnome-shell-extension-impatience
-   - gnome-shell-extension-log-out-button
-   - gnome-shell-extension-mediaplayer
-   - gnome-shell-extension-move-clock
-   - gnome-shell-extension-multi-monitors
-   - gnome-shell-extension-onboard
-   - gnome-shell-extension-pixelsaver
-   - gnome-shell-extension-redshift
-   - gnome-shell-extension-remove-dropdown-arrows
-   - gnome-shell-extensions
-   - gnome-shell-extensions-gpaste
-   - gnome-shell-extension-shortcuts
-   - gnome-shell-extension-suspend-button
-   - gnome-shell-extension-system-monitor
-   - gnome-shell-extension-taskbar
-   - gnome-shell-extension-top-icons-plus
-   - gnome-shell-extension-trash
-   - gnome-shell-extension-weather
-   - ssh-askpass-gnome
+  package:
+    name:
+        - gnome-software-common
+        - gnome-shell-common
+        - gnome-shell
+        - gnome-shell-common
+        - gnome-shell-extension-autohidetopbar
+        - gnome-shell-extension-better-volume
+        - gnome-shell-extension-caffeine
+        - gnome-shell-extension-dashtodock
+        - gnome-shell-extension-disconnect-wifi
+        - gnome-shell-extension-hard-disk-led
+        - gnome-shell-extension-hide-activities
+        - gnome-shell-extension-impatience
+        - gnome-shell-extension-log-out-button
+        - gnome-shell-extension-mediaplayer
+        - gnome-shell-extension-move-clock
+        - gnome-shell-extension-multi-monitors
+        - gnome-shell-extension-onboard
+        - gnome-shell-extension-pixelsaver
+        - gnome-shell-extension-redshift
+        - gnome-shell-extension-remove-dropdown-arrows
+        - gnome-shell-extensions
+        - gnome-shell-extensions-gpaste
+        - gnome-shell-extension-shortcuts
+        - gnome-shell-extension-suspend-button
+        - gnome-shell-extension-system-monitor
+        - gnome-shell-extension-taskbar
+        - gnome-shell-extension-top-icons-plus
+        - gnome-shell-extension-trash
+        - gnome-shell-extension-weather
+        - ssh-askpass-gnome
+    state: latest
 
 - name: Install Nautilus Extensions
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - nautilus-admin
-    - nautilus-data
-    - nautilus-scripts-manager
-    - nautilus-sendto
-    - nautilus-share
+  package:
+    name:
+        - nautilus-admin
+        - nautilus-data
+        - nautilus-scripts-manager
+        - nautilus-sendto
+        - nautilus-share
+    state: latest
 
 - name: Install Gnome Tweak tools
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - gnome-tweak-tool 
-    - dconf-editor
-    - dconf-cli
+  package:
+    name:
+        - gnome-tweak-tool 
+        - dconf-editor
+        - dconf-cli
+    state: latest
 
 - name: Install Remmina
   become: True
-  apt: name={{ item }} state=latest default_release={{ ansible_distribution_release }}-backports
-  with_items:
-    - remmina
-    - remmina-plugin-rdp
-    - remmina-plugin-secret
-    - remmina-plugin-spice
+  package:
+    name:
+        - remmina
+        - remmina-plugin-rdp
+        - remmina-plugin-secret
+        - remmina-plugin-spice
+    state: latest
+    default_release: '{{ ansible_distribution_release }}-backports'
 
 - name: Install Keepass
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - keepass2
-    - keepassx
+  package:
+    name:
+        - keepass2
+        - keepassx
+    state: latest

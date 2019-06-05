@@ -2,24 +2,27 @@
 
 - name: Install Thunderbird
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-     - thunderbird
-     - thunderbird-l10n-fr
-     - calendar-google-provider
-     - enigmail
-     - webext-ublock-origin
-     - webext-https-everywhere
-     - xul-ext-timeline
-     - xul-ext-gcontactsync
-     - lightning
-     - lightning-l10n-fr
-# - calendar-exchange-provider xul-ext-adblock-plus xul-ext-adblock-plus-element-hiding-helper
+  package:
+     name:
+          - thunderbird
+          - thunderbird-l10n-fr
+          - calendar-google-provider
+          - enigmail
+          - webext-ublock-origin
+          - webext-https-everywhere
+          - xul-ext-timeline
+          - xul-ext-gcontactsync
+          - lightning
+          - lightning-l10n-fr
+          # - calendar-exchange-provider xul-ext-adblock-plus xul-ext-adblock-plus-element-hiding-helper
+     state: latest
+
 
 - name: Install aspell
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - aspell
-    - aspell-en
-    - aspell-fr
+  package:
+    name:
+          - aspell
+          - aspell-en
+          - aspell-fr
+    state: latest

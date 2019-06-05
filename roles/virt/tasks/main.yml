@@ -1,7 +1,10 @@
+---
+# tasks file for virt
 
 - name: Install Virt Tools
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
+  package:
+    name:
     - virt-manager
     #- docker-ce
+    state: latest

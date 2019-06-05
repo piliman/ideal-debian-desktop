@@ -2,10 +2,11 @@
 
 - name: Install Developpment Tools
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - jq
-    - eclipse-pde
-    - eclipse-rcp
-    - code
-    - gvfs-bin # To enable trash implementation on vscode
+  package:
+    name:
+        - jq
+        - eclipse-pde
+        - eclipse-rcp
+        - code
+        - gvfs-bin # To enable trash implementation on vscode
+    state: latest

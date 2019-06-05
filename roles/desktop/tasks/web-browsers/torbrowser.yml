@@ -2,15 +2,17 @@
 
 - name: Install Tor
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
+  package:
+    name:
     - tor
     - tor-geoipdb
     - torsocks
 
 - name: Install Torbrowser Launcher
   become: True
-  apt: name={{ item }} state=latest default_release={{ ansible_distribution_release }}-backports
-  with_items:
-    - torbrowser-launcher
+  package:
+    name: 
+        - torbrowser-launcher
+    state: latest
+    default_release: '{{ ansible_distribution_release }}-backports'
 

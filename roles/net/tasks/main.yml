@@ -1,39 +1,45 @@
+---
+# tasks file for net
+
 - name: Install Network software
-  package: name={{ item }} state=latest
-  with_items:
-    - nmap
-    - zenmap
-    - nmapsi4
-    - youtube-dl
-    - wget
-    - aria2
-    - mosh
-    - tcpdump
-    - wireshark
-    - wireshark-gtk
-    - wireshark-qt
-    - network-manager-openvpn
-    - network-manager-openvpn-gnome
-    - openvpn
-    - openvpn-systemd-resolved
-    - whois
-    - dnsutils
-    - fwbuilder
-    - ipcalc
-    - sipcalc
-    - mtr
-    - speedtest-cli
-#    - snort
-#    - snort-doc
-#    - snort-rules-default
+  package:
+    name:
+        - nmap
+        - zenmap
+        - nmapsi4
+        - youtube-dl
+        - wget
+        - aria2
+        - mosh
+        - tcpdump
+        - wireshark
+        - wireshark-gtk
+        - wireshark-qt
+        - network-manager-openvpn
+        - network-manager-openvpn-gnome
+        - openvpn
+        - openvpn-systemd-resolved
+        - whois
+        - dnsutils
+        - fwbuilder
+        - ipcalc
+        - sipcalc
+        - mtr
+        - speedtest-cli
+        #- snort
+        #- snort-doc
+        #- snort-rules-default
+    state: latest
 
 - name: Install Dnsmasq
-  package: name={{ item }} state=latest
-  with_items:
-    - dnsmasq
-    - dnsmasq-utils
+  package:
+    name:
+        - dnsmasq
+        - dnsmasq-utils
+    state: latest
  
 - name: Install Nagstamon
-  package: name={{ item }} state=latest
-  with_items:
-    - nagstamon
+  package:
+    name:
+        - nagstamon
+    state: latest

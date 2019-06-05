@@ -2,19 +2,20 @@
 
 - name: Install LibreOffice
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - libreoffice-gnome
-    - libreoffice-help-fr
-    - libreoffice-l10n-fr
-    - libreoffice-math
-    - hyphen-fr
-    - hunspell-fr
-    - hunspell-fr-comprehensive
-    - hunspell-fr-classical
-    - hunspell-fr-modern
-    - hunspell-fr-revised
-    - hunspell-en-us
-    - mythes-fr
-    - mythes-en-us
+  package:
+    name:
+        - libreoffice-gnome
+        - libreoffice-help-fr
+        - libreoffice-l10n-fr
+        - libreoffice-math
+        - hyphen-fr
+        - hunspell-fr
+        - hunspell-fr-comprehensive
+        - hunspell-fr-classical
+        - hunspell-fr-modern
+        - hunspell-fr-revised
+        - hunspell-en-us
+        - mythes-fr
+        - mythes-en-us
+    state: latest
      

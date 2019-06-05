@@ -2,4 +2,7 @@
 
 - name: Install Google Chrome Web Browser
   become: True
-  apt: name=google-chrome-stable state=latest
+  package:
+    name:
+      - google-chrome-stable
+    state: latest

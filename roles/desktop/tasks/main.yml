@@ -1,4 +1,5 @@
-## GDM3 packages
+---
+# tasks file for desktop
 
 - include: gnome-desktop.yml
 

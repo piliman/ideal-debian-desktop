@@ -2,35 +2,37 @@
 
 - name: Install Gimp
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - gimp
-    - gimp-data
-    - gimp-data-extras
-    - gimp-dcraw
-    - gimp-dds
-    - gimp-gap
-    - gimp-gmic
-    - gimp-plugin-registry
+  package:
+    name:
+        - gimp
+        - gimp-data
+        - gimp-data-extras
+        - gimp-dcraw
+        - gimp-dds
+        - gimp-gap
+        - gimp-gmic
+        - gimp-plugin-registry
+    state: latest
 
 - name: Install VLC packages
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-     - vlc
-     - vlc-l10n
-     - vlc-plugin-access-extra
-     - vlc-plugin-base
-     - vlc-plugin-fluidsynth
-     - vlc-plugin-jack
-     - vlc-plugin-notify
-     - vlc-plugin-qt
-     - vlc-plugin-samba
-     - vlc-plugin-sdl
-     - vlc-plugin-skins2
-     - vlc-plugin-svg
-     - vlc-plugin-video-output
-     - vlc-plugin-video-splitter
-     - vlc-plugin-visualization
-     - vlc-plugin-vlsub
-     - vlc-plugin-zvbi
+  package:
+    name:
+        - vlc
+        - vlc-l10n
+        - vlc-plugin-access-extra
+        - vlc-plugin-base
+        - vlc-plugin-fluidsynth
+        - vlc-plugin-jack
+        - vlc-plugin-notify
+        - vlc-plugin-qt
+        - vlc-plugin-samba
+        - vlc-plugin-sdl
+        - vlc-plugin-skins2
+        - vlc-plugin-svg
+        - vlc-plugin-video-output
+        - vlc-plugin-video-splitter
+        - vlc-plugin-visualization
+        - vlc-plugin-vlsub
+        - vlc-plugin-zvbi
+    state: latest

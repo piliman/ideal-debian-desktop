@@ -1,4 +1,4 @@
-#- include: firefox.yml
+- include: firefox.yml
 - include: chromium.yml
 - include: google.yml
 - include: opera.yml

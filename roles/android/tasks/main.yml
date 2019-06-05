@@ -1,11 +1,12 @@
-## Android packages
-
+---
+# tasks file for android
 
 - name: Install Android Tools
   become: True
-  apt: name={{ item }} state=latest
-  with_items:
-    - adb
-    - android-sdk-platform-tools-common
-    - androidsdk-ddms
-    - android-tools-adb
+  package:
+    name: 
+        - adb
+        - android-sdk-platform-tools-common
+        - androidsdk-ddms
+        - android-tools-adb
+    state: latest
